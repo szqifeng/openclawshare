@@ -1,0 +1,129 @@
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+
+const config: Config = {
+  title: 'OpenClaw',
+  tagline: 'AI 编程能力提升平台',
+  favicon: 'img/favicon.svg',
+
+  future: {
+    v4: true,
+  },
+
+  url: process.env.SITE_URL || 'https://trainlobster.com',
+  baseUrl: process.env.BASE_URL || '/',
+
+  onBrokenLinks: 'warn',
+
+  i18n: {
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
+  },
+
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'baidu-site-verification',
+        content: 'codeva-UYjQgfVPGZ',
+      },
+    },
+    {
+      tagName: 'script',
+      innerHTML: `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?32a7abfa0751c91b0f1136314baf5459";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();`,
+      attributes: {},
+    },
+  ],
+
+  plugins: [
+  ],
+
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          sidebarPath: './sidebars.ts',
+        },
+        blog: {
+          blogTitle: '技术博客',
+          blogDescription: 'OpenClaw 的技术分享与思考',
+          postsPerPage: 10,
+          feedOptions: {
+            type: 'rss',
+            copyright: 'Copyright © 2026 OpenClaw',
+          },
+        },
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  clientModules: ['./src/components/GifViewer.tsx'],
+
+  markdown: {
+    mermaid: true,
+  },
+
+  themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    navbar: {
+      hideOnScroll: false,
+      style: 'primary',
+      title: 'OpenClaw',
+      logo: {
+        alt: 'OpenClaw Logo',
+        src: 'img/logo.svg',
+      },
+      items: [
+        {
+          to: '/',
+          label: '首页',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'openclaw/quick-install',
+          position: 'left',
+          label: '文档',
+        },
+        {
+          to: '/plugins',
+          label: '插件市场',
+          position: 'left',
+        },
+        {
+          to: '/blog',
+          label: '博客',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/szqifeng/trainlobster',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      style: 'light',
+      copyright: '辽ICP备2026003919号',
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  } satisfies Preset.ThemeConfig,
+};
+
+export default config;

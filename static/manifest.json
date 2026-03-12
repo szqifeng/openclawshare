@@ -1,0 +1,25 @@
+{
+  "name": "OpenClaw",
+  "short_name": "OpenClaw",
+  "description": "AI 编程能力提升平台",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo.svg",
+      "sizes": "40x40",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "productivity", "developer-tools"]
+}
