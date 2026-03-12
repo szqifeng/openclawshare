@@ -13,13 +13,8 @@ echo "开始构建..."
 BASE_URL=/ npm run build
 
 # 3. 移动到 nginx 目录
-NGINX_DIR="/var/www/html"
-BACKUP_DIR="/usr/share/nginx/html_backup_$(date +%Y%m%d_%H%M%S)"
-
-echo "备份当前 nginx 目录..."
-if [ -d "$NGINX_DIR" ]; then
-    cp -r "$NGINX_DIR" "$BACKUP_DIR"
-fi
+NGINX_DIR="/var/www/trainlobster.com"
+BACKUP_DIR="/usr/share/nginx/trainlobster_backup_$(date +%Y%m%d_%H%M%S)"
 
 echo "部署静态文件到 nginx..."
 rm -rf "$NGINX_DIR"/*
