@@ -10,7 +10,7 @@ echo "远程主机: $REMOTE_HOST"
 echo "部署脚本: $REMOTE_SCRIPT"
 echo ""
 
-ssh "$REMOTE_HOST" "cd /opt/trainlobster && bash deploy.sh"
+ssh "$REMOTE_HOST" "cd /opt/opt/openclawshare && git pull  && bash deploy.sh"
 
 echo ""
 echo "✅ 部署完成！"
